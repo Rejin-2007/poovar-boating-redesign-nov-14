@@ -1,0 +1,164 @@
+"use client";
+
+import { useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap-client";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Backwater Cruise", path: "/poovar-backwater-cruise" },
+  { name: "Sunset Cruise", path: "/sunset-cruise" },
+  { name: "Prices", path: "/pricing" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+  const header = useRef<HTMLElement>(null);
+  const mobileNav = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    if (!header.current) return;
+
+    const scrollState = ScrollTrigger.create({
+      start: 24,
+      end: 100000,
+      toggleClass: { targets: header.current, className: "is-scrolled" },
+    });
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+      timeline.fromTo(".site-logo", { autoAlpha: 0, y: -6 }, {
+        autoAlpha: 1, y: 0, duration: 0.45, clearProps: "all",
+      });
+      timeline.fromTo(".desktop-nav .nav-link", { autoAlpha: 0, y: -8 }, {
+        autoAlpha: 1, y: 0, duration: 0.38, stagger: 0.045, clearProps: "all",
+      }, 0.04);
+      timeline.fromTo(".desktop-booking", { y: -4 }, {
+        y: 0, duration: 0.4, clearProps: "all",
+      }, 0.16);
+    }
+
+    return () => scrollState.kill();
+  }, { scope: header });
+
+  useGSAP(() => {
+    if (!visible || !mobileNav.current) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      if (!open) setVisible(false);
+      return;
+    }
+
+    const timeline = gsap.timeline({ defaults: { ease: "power2.out" } });
+    if (open) {
+      timeline.fromTo(mobileNav.current, { height: 0, autoAlpha: 0, y: -8 }, {
+        height: "auto", autoAlpha: 1, y: 0, duration: 0.26, clearProps: "all",
+      });
+      timeline.fromTo(".mobile-nav-link", { autoAlpha: 0, y: -6 }, {
+        autoAlpha: 1, y: 0, duration: 0.2, stagger: 0.035, clearProps: "all",
+      }, 0.05);
+    } else {
+      timeline.to(mobileNav.current, {
+        height: 0,
+        autoAlpha: 0,
+        y: -6,
+        duration: 0.2,
+        onComplete: () => setVisible(false),
+      });
+    }
+  }, { scope: header, dependencies: [open, visible], revertOnUpdate: true });
+
+  return (
+    <header ref={header} className="site-header sticky top-0 z-50 border-b border-[#17645F]/10 bg-[#F3EEE8]/95 backdrop-blur-xl">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link href="/" className="site-logo flex items-center" aria-label="Poovar Boating home">
+          <Image
+            src="/logo.webp"
+            alt="Poovar Boating"
+            width={130}
+            height={40}
+            priority
+            className="h-auto w-28 sm:w-32"
+          />
+        </Link>
+
+        <nav className="desktop-nav hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+          {navLinks.map((link) => {
+            const active = pathname === link.path;
+            return (
+              <Link
+                key={link.name}
+                href={link.path}
+                aria-current={active ? "page" : undefined}
+                className={`nav-link text-sm font-semibold ${active ? "is-active" : ""}`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="desktop-booking hidden lg:block">
+          <Link href="/booking" className="button-coral">
+            Book Now
+          </Link>
+        </div>
+
+        <button
+          className="rounded-full p-3 text-[#17645F] transition hover:bg-[#17645F]/10 lg:hidden"
+          onClick={() => {
+            if (!open) setVisible(true);
+            setOpen((previous) => !previous);
+          }}
+          aria-label={open ? "Close main menu" : "Open main menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+        >
+          {open ? <FaTimes size={19} aria-hidden="true" /> : <FaBars size={19} aria-hidden="true" />}
+        </button>
+      </div>
+
+      {visible && (
+          <nav
+            ref={mobileNav}
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+            aria-hidden={!open}
+            inert={!open}
+            className="overflow-hidden border-t border-[#17645F]/10 bg-[#F3EEE8] lg:hidden"
+          >
+            <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
+              {navLinks.map((link) => {
+                const active = pathname === link.path;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.path}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`mobile-nav-link rounded-xl px-4 py-3 text-sm font-semibold transition ${active ? "bg-[#17645F]/10 text-[#17645F]" : "text-[#17645F] hover:bg-[#17645F]/5"}`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+              <Link href="/booking" onClick={() => setOpen(false)} className="mobile-nav-link button-coral mt-2 w-full">
+                Book Now
+              </Link>
+            </div>
+          </nav>
+        )}
+    </header>
+  );
+}
