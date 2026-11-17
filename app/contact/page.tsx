@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <>
       <section aria-label="Contact Poovar boating">
-        <ScrollReveal variant="clip"><ContactSection /></ScrollReveal>
+        <ScrollReveal variant="clip" textReveal><ContactSection /></ScrollReveal>
       </section>
 
       <section aria-label="Poovar boating contact details">

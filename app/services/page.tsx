@@ -22,7 +22,7 @@ export default function Services() {
       </section>
 
       <section aria-label="Book a cruise">
-        <ScrollReveal variant="fade-left"><PlanExperienceSection /></ScrollReveal>
+        <ScrollReveal variant="fade-left" textReveal><PlanExperienceSection /></ScrollReveal>
       </section>
     </>
   );

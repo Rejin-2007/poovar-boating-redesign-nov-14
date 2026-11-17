@@ -8,25 +8,36 @@ import { gsap, useGSAP } from "@/lib/gsap-client";
 
 const cruises = [
   {
-    title: "Silver Cruise",
+    title: "Base Cruise",
     image: "/Deluxe.webp",
     description: "An early ride through the backwaters and mangrove channels.",
     alt: "Boat moving through a mangrove-lined waterway",
-    layout: "feature",
+    layout: "portrait",
+    recommended: false,
   },
   {
-    title: "Golden Cruise",
+    title: "Standard Cruise",
     image: "/gallery/WhatsApp Image 2026-10-24 at 20.06.21.jpeg",
     description: "A boat ride toward the sandbank and estuary.",
     alt: "A boat heading toward the rocky outcrop across Poovar’s estuary",
-    layout: "portrait",
+    layout: "feature",
+    recommended: true,
   },
   {
-    title: "Platinum Cruise",
+    title: "Classic Cruise",
     image: "/Premium.webp",
     description: "Ask us about a private cruise, an extended route, and available stops.",
     alt: "Private boat on the Poovar backwaters",
     layout: "offset",
+    recommended: false,
+  },
+  {
+    title: "Custom Package",
+    image: "/gallery/1000185940.webp",
+    description: "Share your date, group size, and preferences. Ask the team what can be arranged.",
+    alt: "Passengers travelling through Poovar’s mangrove channels by boat",
+    layout: "half",
+    recommended: false,
   },
   {
     title: "Sunrise Cruise",
@@ -34,6 +45,7 @@ const cruises = [
     description: "An early start for backwater views and birdwatching.",
     alt: "Sunrise over open water",
     layout: "wide",
+    recommended: false,
   },
   {
     title: "Lunch Cruise",
@@ -41,6 +53,7 @@ const cruises = [
     description: "Pair a boat trip with a traditional Kerala lunch.",
     alt: "Traditional Kerala lunch served during a Poovar boat trip",
     layout: "half",
+    recommended: false,
   },
   {
     title: "Sunset Cruise",
@@ -48,6 +61,7 @@ const cruises = [
     description: "Head out in the evening as the light settles over the estuary.",
     alt: "Evening light over the Poovar backwaters",
     layout: "half",
+    recommended: false,
   },
 ];
 
@@ -79,7 +93,7 @@ export default function PoovarCruises() {
           <div>
             <p className="eyebrow mb-3">Cruise options</p>
             <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-[#F3EEE8] sm:text-4xl lg:text-5xl">
-              Six options, from sunrise to sunset.
+              Seven options, from sunrise to sunset.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[#F3EEE8]/85 lg:justify-self-end sm:text-lg">
@@ -92,12 +106,17 @@ export default function PoovarCruises() {
         <div className="cruise-layout">
           {cruises.map((cruise, index) => (
             <article
-              className={`cruise-card group cruise-card--${cruise.layout}`}
+              className={`cruise-card group cruise-card--${cruise.layout}${cruise.recommended ? " cruise-card--recommended" : ""}`}
               key={cruise.title}
               onPointerEnter={handleCardEnter}
               onPointerLeave={handleCardLeave}
             >
               <div className="cruise-card-image">
+                {cruise.recommended && (
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#FF6845] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#123430] shadow-md">
+                    Recommended
+                  </span>
+                )}
                 <Image
                   src={cruise.image}
                   alt={cruise.alt}

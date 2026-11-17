@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -25,6 +25,57 @@ export default function Navbar() {
   const pathname = usePathname();
   const header = useRef<HTMLElement>(null);
   const mobileNav = useRef<HTMLElement>(null);
+  const menuToggle = useRef<HTMLButtonElement>(null);
+  const openRef = useRef(false);
+
+  const focusMenuControl = useCallback(() => {
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const desktopLink = header.current?.querySelector<HTMLElement>(
+        ".desktop-nav a[aria-current='page']"
+      ) ?? header.current?.querySelector<HTMLElement>(".desktop-nav a");
+      (desktopLink ?? header.current?.querySelector<HTMLElement>(".site-logo"))?.focus();
+      return;
+    }
+
+    menuToggle.current?.focus();
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    // Move focus before aria-hidden/inert update so a focused link is never hidden.
+    if (mobileNav.current?.contains(document.activeElement)) focusMenuControl();
+    openRef.current = false;
+    setOpen(false);
+  }, [focusMenuControl]);
+
+  const openMenu = () => {
+    openRef.current = true;
+    setVisible(true);
+    setOpen(true);
+  };
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open, closeMenu]);
+
+  useEffect(() => {
+    const desktopBreakpoint = window.matchMedia("(min-width: 1024px)");
+    const handleBreakpointChange = () => {
+      if (desktopBreakpoint.matches && openRef.current) closeMenu();
+    };
+
+    desktopBreakpoint.addEventListener("change", handleBreakpointChange);
+    return () => desktopBreakpoint.removeEventListener("change", handleBreakpointChange);
+  }, [closeMenu]);
 
   useGSAP(() => {
     if (!header.current) return;
@@ -74,7 +125,9 @@ export default function Navbar() {
         autoAlpha: 0,
         y: -6,
         duration: 0.2,
-        onComplete: () => setVisible(false),
+        onComplete: () => {
+          if (!openRef.current) setVisible(false);
+        },
       });
     }
   }, { scope: header, dependencies: [open, visible], revertOnUpdate: true });
@@ -116,49 +169,46 @@ export default function Navbar() {
         </div>
 
         <button
+          ref={menuToggle}
           className="rounded-full p-3 text-[#17645F] transition hover:bg-[#17645F]/10 lg:hidden"
-          onClick={() => {
-            if (!open) setVisible(true);
-            setOpen((previous) => !previous);
-          }}
+          onClick={() => (openRef.current ? closeMenu() : openMenu())}
           aria-label={open ? "Close main menu" : "Open main menu"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
+          type="button"
         >
           {open ? <FaTimes size={19} aria-hidden="true" /> : <FaBars size={19} aria-hidden="true" />}
         </button>
       </div>
 
-      {visible && (
-          <nav
-            ref={mobileNav}
-            id="mobile-navigation"
-            aria-label="Mobile navigation"
-            aria-hidden={!open}
-            inert={!open}
-            className="overflow-hidden border-t border-[#17645F]/10 bg-[#F3EEE8] lg:hidden"
-          >
-            <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
-              {navLinks.map((link) => {
-                const active = pathname === link.path;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.path}
-                    onClick={() => setOpen(false)}
-                    aria-current={active ? "page" : undefined}
-                    className={`mobile-nav-link rounded-xl px-4 py-3 text-sm font-semibold transition ${active ? "bg-[#17645F]/10 text-[#17645F]" : "text-[#17645F] hover:bg-[#17645F]/5"}`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-              <Link href="/booking" onClick={() => setOpen(false)} className="mobile-nav-link button-coral mt-2 w-full">
-                Book Now
+      <nav
+        ref={mobileNav}
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        aria-hidden={!open}
+        inert={!open}
+        className={`${visible ? "block" : "hidden"} overflow-hidden border-t border-[#17645F]/10 bg-[#F3EEE8] lg:hidden`}
+      >
+        <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
+          {navLinks.map((link) => {
+            const active = pathname === link.path;
+            return (
+              <Link
+                key={link.name}
+                href={link.path}
+                onClick={closeMenu}
+                aria-current={active ? "page" : undefined}
+                className={`mobile-nav-link rounded-xl px-4 py-3 text-sm font-semibold transition ${active ? "bg-[#17645F]/10 text-[#17645F]" : "text-[#17645F] hover:bg-[#17645F]/5"}`}
+              >
+                {link.name}
               </Link>
-            </div>
-          </nav>
-        )}
+            );
+          })}
+          <Link href="/booking" onClick={closeMenu} className="mobile-nav-link button-coral mt-2 w-full">
+            Book Now
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }

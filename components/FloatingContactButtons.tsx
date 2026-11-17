@@ -1,15 +1,11 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingContactButtons() {
-  const pathname = usePathname();
-  const hasMobileForm = ["/booking", "/enquiry", "/contact"].includes(pathname);
-
   return (
     <nav
-      className={`fixed bottom-5 right-4 z-50 flex-col gap-3 sm:right-6 ${hasMobileForm ? "hidden sm:flex" : "flex"}`}
+      className={`fixed bottom-5 right-4 z-50 flex-col gap-3 sm:right-6 `}
       aria-label="Contact Poovar Boating"
     >
       <a

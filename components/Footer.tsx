@@ -109,7 +109,7 @@ export default function Footer() {
       <div className="border-t border-[#F3EEE8]/10 px-4 py-6 text-center text-sm text-[#F3EEE8] sm:px-6 lg:px-8">
         <p>© {new Date().getFullYear()} Kayaloram Poovar Boating. All rights reserved.</p>
         <p className="mt-2">
-          Website by <a href="https://www.instagram.com/browzess" target="_blank" rel="noreferrer" className="text-[#F3EEE8] transition hover:underline">Browzess</a>
+          Designed And Developed By <a href="https://www.instagram.com/browzess" target="_blank" rel="noreferrer" className="text-[#F3EEE8] transition hover:underline">Browzess</a>
         </p>
       </div>
     </footer>

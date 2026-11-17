@@ -327,6 +327,11 @@ textarea:focus-visible {
   padding-bottom: 1.25rem;
 }
 
+.cruise-card--recommended {
+  border-top: 2px solid var(--color-coral);
+  padding-top: 0.75rem;
+}
+
 .cruise-card-image {
   position: relative;
   height: 15rem;

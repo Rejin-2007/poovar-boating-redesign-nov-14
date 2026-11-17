@@ -12,6 +12,9 @@ type ScrollRevealProps = {
   variant?: RevealVariant;
   selector?: string;
   parallax?: boolean;
+  /** Stagger the text blocks inside a revealed section for a more editorial entrance. */
+  textReveal?: boolean;
+  textSelector?: string;
 };
 
 /**
@@ -25,6 +28,8 @@ export default function ScrollReveal({
   variant = "fade-up",
   selector = "[data-reveal-item]",
   parallax = false,
+  textReveal = false,
+  textSelector = "h1, h2, h3, h4, .eyebrow, p, blockquote, summary, [data-text-reveal]",
 }: ScrollRevealProps) {
   const root = useRef<HTMLDivElement>(null);
 
@@ -64,6 +69,26 @@ export default function ScrollReveal({
           once: true,
         },
       });
+
+      if (textReveal) {
+        const textTargets = element.querySelectorAll<HTMLElement>(textSelector);
+        if (textTargets.length) {
+          gsap.fromTo(textTargets, { autoAlpha: 0, y: 16 }, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.58,
+            delay: delay + 0.04,
+            ease: "power3.out",
+            stagger: 0.075,
+            clearProps: "opacity,visibility,transform",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 86%",
+              once: true,
+            },
+          });
+        }
+      }
     });
 
     if (parallax) {
@@ -84,7 +109,7 @@ export default function ScrollReveal({
     }
 
     return () => media.revert();
-  }, { scope: root, dependencies: [delay, parallax, selector, variant], revertOnUpdate: true });
+  }, { scope: root, dependencies: [delay, parallax, selector, textReveal, textSelector, variant], revertOnUpdate: true });
 
   return <div ref={root} className={className}>{children}</div>;
 }

@@ -72,7 +72,7 @@ export default async function PoovarGuidePage({ params }: Props) {
           </ol>
         </nav>
 
-        <ScrollReveal variant="clip">
+        <ScrollReveal variant="clip" textReveal>
         <header className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
           <div>
             <p className="eyebrow mb-4">Poovar · Kerala</p>
@@ -115,7 +115,7 @@ export default async function PoovarGuidePage({ params }: Props) {
         <div className="mt-12 grid gap-10 border-t border-[#17645F]/20 pt-8 sm:mt-16 sm:pt-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16">
           <div className="max-w-3xl">
             {page.sections.map((section) => (
-              <ScrollReveal key={section.heading} variant="fade-left" className="mb-9 sm:mb-12">
+              <ScrollReveal key={section.heading} variant="fade-left" className="mb-9 sm:mb-12" textReveal>
               <section>
                 <h2 className="text-2xl font-semibold leading-tight text-[#17645F] sm:text-3xl">{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => (

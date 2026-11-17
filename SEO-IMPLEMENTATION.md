@@ -34,7 +34,7 @@ Use this as a writing brief if the homepage is expanded. Keep the current design
 | --- | --- | --- | ---: |
 | H1 and opening | **Poovar Boating in Kerala**; explain the waterways and invite visitors to compare options | Find a Poovar boat ride and decide whether it fits the visit | 110 |
 | H2: Introduction to Poovar boating | Describe mangrove channels, backwaters and estuary; define a backwater cruise and island boating. H3: What is Poovar boating? | Understand the local experience | 130 |
-| H2: Cruise options | List sunrise, lunch and sunset plus Silver, Golden and Platinum. H3: Sunrise and daytime rides; H3: Sunset trips; H3: Named cruise options. Mark unknown price/duration and link to details. | Compare available packages | 210 |
+| H2: Cruise options | List sunrise, lunch and sunset plus Base Cruise, Standard Cruise (Recommended), Classic Cruise, and Custom Package. H3: Sunrise and daytime rides; H3: Sunset trips; H3: Named cruise options. Mark unknown price/duration and link to details. | Compare available packages | 210 |
 | H2: A Poovar backwater cruise | Explain the shift from shaded channels toward open water. H3: Mangrove canals; H3: Wider backwaters and estuary. State that route varies and must be confirmed. | Learn what happens during the ride | 180 |
 | H2: Landmarks along the water | Cover named route sights without guaranteeing a stop. H3: Golden Sand Beach; H3: Elephant Rock; H3: Birdlife along the mangroves. | Check sights and possible stops | 200 |
 | H2: Choose a departure | Compare sunrise, daytime/lunch, sunset and twilight. H3: Match the light and schedule to your plans; confirm actual departures. | Choose a time of day | 120 |

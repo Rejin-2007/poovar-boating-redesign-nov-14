@@ -30,7 +30,7 @@ export default function Blog() {
         }}
       />
       <section aria-label="Poovar boating blog">
-        <ScrollReveal><BlogPost /></ScrollReveal>
+        <ScrollReveal textReveal><BlogPost /></ScrollReveal>
       </section>
     </>
   );

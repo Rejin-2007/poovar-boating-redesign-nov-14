@@ -58,13 +58,13 @@ export default function Home() {
           <Hero />
         </section>
 
-        <ScrollReveal variant="stagger" selector="[data-reveal-item]">
+        <ScrollReveal variant="stagger" selector="[data-reveal-item]" textReveal>
           <section aria-label="Poovar boating packages">
             <ExperienceSection />
           </section>
         </ScrollReveal>
 
-        <ScrollReveal variant="stagger" selector="[data-reveal-item]">
+        <ScrollReveal variant="stagger" selector="[data-reveal-item]" textReveal>
           <section aria-label="Poovar routes and landmarks">
             <RouteStories stops={ROUTE_STOPS} />
           </section>
@@ -74,19 +74,19 @@ export default function Home() {
           <GallerySection homePreview />
         </section>
 
-        <ScrollReveal variant="fade-right">
+        <ScrollReveal variant="fade-right" textReveal>
           <section aria-label="Poovar backwater boating videos">
             <BoatingVideos />
           </section>
         </ScrollReveal>
 
-        <ScrollReveal variant="stagger" selector="[data-reveal-item]">
+        <ScrollReveal variant="stagger" selector="[data-reveal-item]" textReveal>
           <section aria-label="Poovar boating reviews">
             <Reviews />
           </section>
         </ScrollReveal>
 
-        <ScrollReveal variant="stagger" selector="details">
+        <ScrollReveal variant="stagger" selector="details" textReveal>
           <HomeFaq />
         </ScrollReveal>
       </main>
