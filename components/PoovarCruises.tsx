@@ -86,17 +86,17 @@ export default function PoovarCruises() {
   });
 
   return (
-    <section ref={root} className="theme-teal px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <section ref={root} className="theme-burgundy-deep px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <ScrollReveal variant="fade-right" className="mb-9 sm:mb-12">
         <header className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="eyebrow mb-3">Cruise options</p>
-            <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-[#F3EEE8] sm:text-4xl lg:text-5xl">
+            <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-[#fff0dc] sm:text-4xl lg:text-5xl">
               Seven options, from sunrise to sunset.
             </h2>
           </div>
-          <p className="max-w-2xl text-base leading-8 text-[#F3EEE8]/85 lg:justify-self-end sm:text-lg">
+          <p className="max-w-2xl text-base leading-8 text-[#fff0dc]/85 lg:justify-self-end sm:text-lg">
             Routes and timings depend on the cruise. Send us your date and group size and we’ll confirm what’s available.
           </p>
         </header>
@@ -113,7 +113,7 @@ export default function PoovarCruises() {
             >
               <div className="cruise-card-image">
                 {cruise.recommended && (
-                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#FF6845] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#123430] shadow-md">
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#fff0dc] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#790b13] shadow-md">
                     Recommended
                   </span>
                 )}
@@ -127,14 +127,14 @@ export default function PoovarCruises() {
               </div>
               <div className="cruise-card-copy">
                 <p className="eyebrow mb-2">0{index + 1}</p>
-                <h3 className="font-editorial text-3xl leading-tight text-[#F3EEE8] sm:text-4xl">{cruise.title}</h3>
-                <p className="mt-2 max-w-lg text-sm leading-7 text-[#F3EEE8]/85 sm:text-base">{cruise.description}</p>
+                <h3 className="font-editorial text-3xl leading-tight text-[#fff0dc] sm:text-4xl">{cruise.title}</h3>
+                <p className="mt-2 max-w-lg text-sm leading-7 text-[#fff0dc]/85 sm:text-base">{cruise.description}</p>
                 <Link
                   href={`https://wa.me/918139031924?text=${encodeURIComponent(`Hello, I am interested in the ${cruise.title} in Poovar. Could you please share the current price, duration and availability?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Ask about the ${cruise.title}`}
-                  className="mt-4 inline-flex min-h-11 items-center border-b border-[#F3EEE8]/70 text-sm font-semibold text-[#F3EEE8] transition hover:border-[#FF6845]"
+                  className="mt-4 inline-flex min-h-11 items-center border-b border-[#fff0dc]/70 text-sm font-semibold text-[#fff0dc] transition hover:border-[#fff0dc]"
                 >
                   Ask about this cruise <span className="ml-2" aria-hidden="true">↗</span>
                 </Link>
@@ -145,14 +145,14 @@ export default function PoovarCruises() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up">
-        <nav aria-label="Poovar cruise guides" className="mt-10 border-t border-[#F3EEE8]/25 pt-6">
-          <p className="text-sm font-semibold text-[#F3EEE8]">Plan by experience</p>
-          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#F3EEE8]/90">
-            <li><Link className="underline decoration-[#FF6845] underline-offset-4" href="/poovar-backwater-cruise">Backwater cruise</Link></li>
-            <li><Link className="underline decoration-[#FF6845] underline-offset-4" href="/sunset-cruise">Sunset cruise</Link></li>
-            <li><Link className="underline decoration-[#FF6845] underline-offset-4" href="/poovar-island-boating">Island boating</Link></li>
-            <li><Link className="underline decoration-[#FF6845] underline-offset-4" href="/mangrove-forest-boating">Mangrove boating</Link></li>
-            <li><Link className="underline decoration-[#FF6845] underline-offset-4" href="/pricing">Price and booking questions</Link></li>
+        <nav aria-label="Poovar cruise guides" className="mt-10 border-t border-[#fff0dc]/25 pt-6">
+          <p className="text-sm font-semibold text-[#fff0dc]">Plan by experience</p>
+          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#fff0dc]/90">
+            <li><Link className="underline decoration-[#fff0dc] underline-offset-4" href="/poovar-backwater-cruise">Backwater cruise</Link></li>
+            <li><Link className="underline decoration-[#fff0dc] underline-offset-4" href="/sunset-cruise">Sunset cruise</Link></li>
+            <li><Link className="underline decoration-[#fff0dc] underline-offset-4" href="/poovar-island-boating">Island boating</Link></li>
+            <li><Link className="underline decoration-[#fff0dc] underline-offset-4" href="/mangrove-forest-boating">Mangrove boating</Link></li>
+            <li><Link className="underline decoration-[#fff0dc] underline-offset-4" href="/pricing">Price and booking questions</Link></li>
           </ul>
         </nav>
         </ScrollReveal>

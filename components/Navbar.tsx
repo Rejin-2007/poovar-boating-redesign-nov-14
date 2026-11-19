@@ -133,7 +133,7 @@ export default function Navbar() {
   }, { scope: header, dependencies: [open, visible], revertOnUpdate: true });
 
   return (
-    <header ref={header} className="site-header sticky top-0 z-50 border-b border-[#17645F]/10 bg-[#F3EEE8]/95 backdrop-blur-xl">
+    <header ref={header} className="site-header sticky top-0 z-50 border-b border-[#fff0dc]/10 bg-[#790b13]/95 backdrop-blur-xl">
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="site-logo flex items-center" aria-label="Poovar Boating home">
           <Image
@@ -142,7 +142,7 @@ export default function Navbar() {
             width={130}
             height={40}
             priority
-            className="h-auto w-28 sm:w-32"
+            className="h-auto w-28 brightness-0 invert sm:w-32"
           />
         </Link>
 
@@ -163,14 +163,14 @@ export default function Navbar() {
         </nav>
 
         <div className="desktop-booking hidden lg:block">
-          <Link href="/booking" className="button-coral">
+          <Link href="/booking" className="button-primary">
             Book Now
           </Link>
         </div>
 
         <button
           ref={menuToggle}
-          className="rounded-full p-3 text-[#17645F] transition hover:bg-[#17645F]/10 lg:hidden"
+          className="rounded-full p-3 text-[#fff0dc] transition hover:bg-[#fff0dc]/10 lg:hidden"
           onClick={() => (openRef.current ? closeMenu() : openMenu())}
           aria-label={open ? "Close main menu" : "Open main menu"}
           aria-expanded={open}
@@ -187,7 +187,7 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         aria-hidden={!open}
         inert={!open}
-        className={`${visible ? "block" : "hidden"} overflow-hidden border-t border-[#17645F]/10 bg-[#F3EEE8] lg:hidden`}
+        className={`${visible ? "block" : "hidden"} overflow-hidden border-t border-[#fff0dc]/15 bg-[#790b13] lg:hidden`}
       >
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
           {navLinks.map((link) => {
@@ -198,13 +198,13 @@ export default function Navbar() {
                 href={link.path}
                 onClick={closeMenu}
                 aria-current={active ? "page" : undefined}
-                className={`mobile-nav-link rounded-xl px-4 py-3 text-sm font-semibold transition ${active ? "bg-[#17645F]/10 text-[#17645F]" : "text-[#17645F] hover:bg-[#17645F]/5"}`}
+                className={`mobile-nav-link rounded-xl px-4 py-3 text-sm font-semibold transition ${active ? "bg-[#fff0dc]/12 text-[#fff0dc]" : "text-[#fff0dc] hover:bg-[#fff0dc]/8"}`}
               >
                 {link.name}
               </Link>
             );
           })}
-          <Link href="/booking" onClick={closeMenu} className="mobile-nav-link button-coral mt-2 w-full">
+          <Link href="/booking" onClick={closeMenu} className="mobile-nav-link button-primary mt-2 w-full">
             Book Now
           </Link>
         </div>

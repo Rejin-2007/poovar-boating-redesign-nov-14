@@ -36,21 +36,21 @@ export default function ServicesHero() {
   }, { scope: root });
 
   return (
-    <section ref={root} className="bg-[#F3EEE8] px-4 py-10 text-[#17645F] sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+    <section ref={root} className="bg-[#790b13] px-4 py-10 text-[#fff0dc] sm:px-6 sm:py-14 lg:px-8 lg:py-16">
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
         <div className="max-w-2xl py-3 sm:py-8">
           <p data-services-copy className="eyebrow mb-5 flex items-center gap-3">
-            <span className="h-px w-9 bg-[#FF6845]" />
+            <span className="h-px w-9 bg-[#fff0dc]" />
             Poovar Boating Services
           </p>
-          <h1 data-services-copy className="font-editorial text-5xl leading-[1.02] text-[#17645F] sm:text-6xl lg:text-7xl">
+          <h1 data-services-copy className="font-editorial text-5xl leading-[1.02] text-[#fff0dc] sm:text-6xl lg:text-7xl">
             Pick a cruise for your day in Poovar.
           </h1>
-          <p data-services-copy className="mt-6 max-w-xl text-base leading-8 text-[#17645F] sm:text-lg">
+          <p data-services-copy className="mt-6 max-w-xl text-base leading-8 text-[#fff0dc] sm:text-lg">
             Browse the available trips below: sunrise and sunset rides, a lunch cruise, and routes through the mangroves. Send us your date if you’d like help choosing.
           </p>
           <div data-services-copy className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/booking" className="button-coral px-7 py-3.5">
+            <Link href="/booking" className="button-primary px-7 py-3.5">
               Ask about a date
             </Link>
             <Link href="/contact" className="button-outline px-7 py-3.5">
@@ -68,7 +68,7 @@ export default function ServicesHero() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#17645F]/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#790b13]/25 to-transparent" />
         </div>
       </div>
     </section>

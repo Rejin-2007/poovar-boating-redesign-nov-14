@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  /* Core palette: warm ivory, deep teal, coral. */
-  --color-ivory: #f3eee8;
-  --color-ivory-card: #f3eee8;
-  --color-teal: #17645f;
-  --color-teal-ink: #17645f;
-  /* Dark ink gives coral CTAs readable text contrast (4.69:1). */
-  --color-button-ink: #123430;
-  --color-coral: #ff6845;
+  color-scheme: dark;
+  /* Brand palette: deep crimson burgundy with warm ivory highlights. */
+  --color-ivory: #fff0dc;
+  --color-ivory-card: #fff0dc;
+  --color-burgundy: #790b13;
+  --color-burgundy-deep: #65090f;
+  /* Burgundy ink keeps ivory calls to action readable. */
+  --color-button-ink: #790b13;
+  --color-accent: #fff0dc;
   --font-body: var(--font-inter), Inter, "Segoe UI", Arial, sans-serif;
   --font-heading: var(--font-manrope), Manrope, var(--font-body);
 }
@@ -22,8 +22,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--color-ivory);
-  color: var(--color-teal-ink);
+  background: #790b13;
+  color: var(--color-ivory);
   font-family: var(--font-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,17 +33,23 @@ body {
   box-sizing: border-box;
 }
 
-.theme-ivory {
-  background-color: var(--color-ivory);
-  color: var(--color-teal);
-}
-
-.theme-teal {
-  background-color: var(--color-teal);
+.theme-burgundy {
+  background-color: #790b13;
+  background-image: radial-gradient(ellipse at 12% 0%, rgb(255 240 220 / 4%), transparent 36%);
   color: var(--color-ivory);
 }
 
-.theme-teal .eyebrow {
+[class~="bg-[#790b13]"] {
+  background-image: linear-gradient(145deg, #790b13, #70090f);
+}
+
+.theme-burgundy-deep {
+  background-color: var(--color-burgundy-deep);
+  background-image: linear-gradient(135deg, #790b13 0%, #65090f 100%);
+  color: var(--color-ivory);
+}
+
+.theme-burgundy-deep .eyebrow {
   color: var(--color-ivory);
 }
 
@@ -63,8 +69,8 @@ blockquote {
 }
 
 ::selection {
-  background-color: var(--color-teal);
-  color: var(--color-ivory);
+  background-color: var(--color-ivory);
+  color: var(--color-burgundy);
 }
 
 img {
@@ -84,7 +90,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--color-teal);
+  outline: 3px solid var(--color-ivory);
   outline-offset: 3px;
 }
 
@@ -100,9 +106,9 @@ textarea:focus-visible {
   margin: 0 0 1rem;
   overflow: hidden;
   break-inside: avoid;
-  border: 1px solid rgb(243 238 232 / 20%);
+  border: 1px solid rgb(255 240 220 / 20%);
   border-radius: 1.35rem;
-  background: #F3EEE8;
+  background: #fff0dc;
 }
 
 .gallery-item:nth-child(6n + 1) { height: 25rem; }
@@ -121,7 +127,7 @@ textarea:focus-visible {
 }
 
 .eyebrow {
-  color: var(--color-teal);
+  color: var(--color-ivory);
   font-size: 0.72rem;
   font-weight: 750;
   letter-spacing: 0.2em;
@@ -129,14 +135,14 @@ textarea:focus-visible {
   text-transform: uppercase;
 }
 
-.button-coral {
+.button-primary {
   display: inline-flex;
   min-height: 3rem;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
   border-radius: 999px;
-  background: var(--color-coral);
+  background: var(--color-accent);
   padding: 0.75rem 1.5rem;
   color: var(--color-button-ink);
   font-size: 0.875rem;
@@ -144,9 +150,9 @@ textarea:focus-visible {
   transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
-.button-coral:hover {
+.button-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgb(255 104 69 / 18%);
+  box-shadow: 0 12px 24px rgb(255 240 220 / 18%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -170,7 +176,7 @@ textarea:focus-visible {
 
 .nav-link {
   position: relative;
-  color: var(--color-teal-ink);
+  color: var(--color-ivory);
   transition: color 180ms ease;
 }
 
@@ -181,7 +187,7 @@ textarea:focus-visible {
   left: 0;
   height: 2px;
   border-radius: 99px;
-  background: var(--color-coral);
+  background: var(--color-accent);
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -190,16 +196,18 @@ textarea:focus-visible {
 
 .nav-link:hover,
 .nav-link.is-active {
-  color: var(--color-teal);
+  color: var(--color-ivory);
 }
 
 .site-header {
+  border-color: rgb(255 240 220 / 12%);
+  background-color: rgb(121 11 19 / 96%);
   transition: box-shadow 220ms ease, background-color 220ms ease;
 }
 
 .site-header.is-scrolled {
-  box-shadow: 0 10px 26px rgb(18 52 48 / 9%);
-  background-color: rgb(243 238 232 / 98%);
+  box-shadow: 0 10px 26px rgb(48 3 7 / 24%);
+  background-color: rgb(121 11 19 / 98%);
 }
 
 .nav-link:hover::after,
@@ -212,30 +220,69 @@ textarea:focus-visible {
   min-height: 3rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(23 100 95 / 30%);
+  border: 1px solid rgb(255 240 220 / 45%);
   border-radius: 999px;
   background: transparent;
-  color: var(--color-teal);
+  color: var(--color-ivory);
   font-size: 0.875rem;
   font-weight: 700;
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .button-outline:hover {
-  border-color: var(--color-teal);
-  background: var(--color-teal);
-  color: var(--color-ivory);
-}
-
-.theme-teal .button-outline {
-  border-color: rgb(243 238 232 / 60%);
-  color: var(--color-ivory);
-}
-
-.theme-teal .button-outline:hover {
   border-color: var(--color-ivory);
   background: var(--color-ivory);
-  color: var(--color-teal);
+  color: var(--color-burgundy);
+}
+
+.button-primary:focus-visible,
+.button-outline:focus-visible {
+  outline: 3px solid var(--color-ivory);
+  outline-offset: 4px;
+}
+
+.cruise-card,
+.route-item,
+.review-feature,
+.review-list-item {
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.cruise-card:hover,
+.route-item:hover {
+  border-color: rgb(255 240 220 / 55%);
+}
+
+.blog-article {
+  background: linear-gradient(145deg, #790b13, #65090f);
+  box-shadow: 0 24px 70px rgb(48 3 7 / 28%);
+}
+
+.enquiry-form-field {
+  border-color: rgb(255 240 220 / 32%);
+  background: var(--color-ivory);
+  color: var(--color-burgundy);
+  color-scheme: light;
+}
+
+.enquiry-form-field::placeholder {
+  color: rgb(121 11 19 / 60%);
+}
+
+.enquiry-form-field:focus-visible {
+  outline: 2px solid var(--color-ivory);
+  outline-offset: 3px;
+}
+
+.theme-burgundy-deep .button-outline {
+  border-color: rgb(255 240 220 / 60%);
+  color: var(--color-ivory);
+}
+
+.theme-burgundy-deep .button-outline:hover {
+  border-color: var(--color-ivory);
+  background: var(--color-ivory);
+  color: var(--color-burgundy);
 }
 
 .hero-art {
@@ -252,7 +299,7 @@ textarea:focus-visible {
   margin: 0;
   overflow: hidden;
   border-radius: 2rem 2rem 2rem 7rem;
-  background: #F3EEE8;
+  background: #fff0dc;
 }
 
 .hero-photo-detail {
@@ -277,7 +324,7 @@ textarea:focus-visible {
 
 .hero-photo-detail figcaption {
   padding: 0.7rem 0.7rem 0.1rem;
-  color: var(--color-teal);
+  color: var(--color-burgundy);
   font-size: 1.1rem;
 }
 
@@ -292,7 +339,7 @@ textarea:focus-visible {
   margin: 0;
   overflow: hidden;
   border-radius: 1.6rem 1.6rem 1.6rem 6rem;
-  background: #F3EEE8;
+  background: #fff0dc;
 }
 
 .route-list {
@@ -304,7 +351,7 @@ textarea:focus-visible {
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 1rem;
   align-items: center;
-  border-top: 1px solid rgb(23 100 95 / 20%);
+  border-top: 1px solid rgb(255 240 220 / 20%);
   padding: 1.1rem 0;
 }
 
@@ -313,7 +360,7 @@ textarea:focus-visible {
   height: 7rem;
   overflow: hidden;
   border-radius: 1rem;
-  background: #F3EEE8;
+  background: #fff0dc;
 }
 
 .cruise-layout {
@@ -323,12 +370,12 @@ textarea:focus-visible {
 
 .cruise-card {
   overflow: hidden;
-  border-bottom: 1px solid rgb(23 100 95 / 20%);
+  border-bottom: 1px solid rgb(255 240 220 / 20%);
   padding-bottom: 1.25rem;
 }
 
 .cruise-card--recommended {
-  border-top: 2px solid var(--color-coral);
+  border-top: 2px solid var(--color-accent);
   padding-top: 0.75rem;
 }
 
@@ -337,7 +384,7 @@ textarea:focus-visible {
   height: 15rem;
   overflow: hidden;
   border-radius: 1.2rem;
-  background: #F3EEE8;
+  background: #fff0dc;
 }
 
 .cruise-card-copy {
@@ -354,12 +401,12 @@ textarea:focus-visible {
 }
 
 .review-feature {
-  border-top: 2px solid var(--color-coral);
+  border-top: 2px solid var(--color-accent);
   padding-top: 1.5rem;
 }
 
 .review-list-item {
-  border-top: 1px solid rgb(243 238 232 / 25%);
+  border-top: 1px solid rgb(255 240 220 / 25%);
   padding: 1.25rem 0;
 }
 
@@ -372,13 +419,13 @@ textarea:focus-visible {
 
 .blog-article header {
   margin-bottom: 2.5rem;
-  border-bottom: 1px solid rgb(23 100 95 / 15%);
+  border-bottom: 1px solid rgb(255 240 220 / 20%);
   padding-bottom: 2rem;
 }
 
 .blog-article h1 {
   max-width: 46rem;
-  color: var(--color-teal);
+  color: var(--color-ivory);
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.08;
@@ -386,14 +433,14 @@ textarea:focus-visible {
 
 .blog-article section {
   margin-top: 2.25rem;
-  color: #17645F;
+  color: var(--color-ivory);
   font-size: 1rem;
   line-height: 1.9;
 }
 
 .blog-article section h2 {
   margin-bottom: 0.7rem;
-  color: var(--color-teal);
+  color: var(--color-ivory);
   font-size: clamp(1.35rem, 3vw, 1.85rem);
   font-weight: 700;
   line-height: 1.25;

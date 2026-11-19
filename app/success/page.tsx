@@ -11,25 +11,25 @@ export const metadata = createPageMetadata({
 
 export default function SuccessPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#F3EEE8] px-6">
+    <main className="flex min-h-screen items-center justify-center bg-[#790b13] px-6">
       
       <ScrollReveal className="max-w-lg w-full">
-      <div className="bg-[#F3EEE8] rounded-2xl shadow-xl p-10 text-center">
+      <div className="rounded-2xl border border-[#fff0dc]/25 bg-[#65090f] p-10 text-center shadow-[0_24px_70px_rgba(48,3,7,0.28)]">
         
         {/* Success Icon */}
         <div className="flex justify-center">
-          <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#F3EEE8]">
-            <span className="text-4xl">✅</span>
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#fff0dc]/35 bg-[#fff0dc]">
+            <span className="text-4xl font-bold text-[#790b13]">✓</span>
           </div>
         </div>
 
         {/* Heading */}
-        <h1 className="mt-6 text-3xl font-bold text-[#17645F]">
+        <h1 className="mt-6 text-3xl font-bold text-[#fff0dc]">
           Form Submitted Successfully!
         </h1>
 
         {/* Description */}
-        <p className="mt-4 text-[#17645F] leading-relaxed">
+        <p className="mt-4 text-[#fff0dc] leading-relaxed">
           Thank you for reaching out to us.  
           We have received your submission and will get back to you shortly.
         </p>
@@ -39,14 +39,14 @@ export default function SuccessPage() {
           
           <Link
             href="/"
-            className="px-6 py-3 bg-[#17645F] hover:bg-[#17645F] text-[#F3EEE8] font-medium rounded-xl shadow-md transition duration-300"
+            className="rounded-xl bg-[#fff0dc] px-6 py-3 font-semibold text-[#790b13] shadow-md transition duration-300 hover:brightness-95"
           >
             Back to Home
           </Link>
 
           <Link
             href="/contact"
-            className="px-6 py-3 bg-[#F3EEE8] border border-[#17645F]/25 hover:bg-[#17645F]/5 text-[#17645F] font-medium rounded-xl transition duration-300"
+            className="rounded-xl border border-[#fff0dc]/50 px-6 py-3 font-semibold text-[#fff0dc] transition duration-300 hover:bg-[#fff0dc]/10"
           >
             Submit Another Response
           </Link>
@@ -54,7 +54,7 @@ export default function SuccessPage() {
         </div>
 
         {/* Small UX Note */}
-        <p className="mt-6 text-sm text-[#17645F]">
+        <p className="mt-6 text-sm text-[#fff0dc]">
           A confirmation message has been recorded successfully.
         </p>
 

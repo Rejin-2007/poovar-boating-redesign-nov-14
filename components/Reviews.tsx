@@ -57,12 +57,12 @@ function Stars({ rating }: { rating: number }) {
         const half = rating >= index + 0.5 && rating < index + 1
 
         return (
-          <span key={index} className={`text-base sm:text-lg ${full || half ? "text-[#FF6845]" : "text-[#F3EEE8]/25"}`} aria-hidden="true">
+          <span key={index} className={`text-base sm:text-lg ${full || half ? "text-[#fff0dc]" : "text-[#fff0dc]/25"}`} aria-hidden="true">
             {full ? "★" : half ? "⯪" : "★"}
           </span>
         )
       })}
-      <span className="ml-2 text-sm text-[#F3EEE8]/80">({rating}/5)</span>
+      <span className="ml-2 text-sm text-[#fff0dc]/80">({rating}/5)</span>
     </div>
   )
 }
@@ -71,11 +71,11 @@ export default function Reviews() {
   const [featuredReview, ...otherReviews] = reviews;
 
   return (
-    <section className="theme-teal py-14 sm:py-16 lg:py-20">
+    <section className="theme-burgundy-deep py-14 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="mb-9 max-w-2xl sm:mb-12">
           <p className="eyebrow mb-3">Guest comments</p>
-          <h2 className="text-3xl font-semibold leading-tight text-[#F3EEE8] sm:text-4xl">
+          <h2 className="text-3xl font-semibold leading-tight text-[#fff0dc] sm:text-4xl">
             Notes from Poovar boat rides.
           </h2>
         </header>
@@ -83,7 +83,7 @@ export default function Reviews() {
         <div className="review-layout">
           <article data-reveal-item className="review-feature">
             <Stars rating={featuredReview.stars} />
-            <blockquote className="review-quote mt-6 text-[#F3EEE8]">
+            <blockquote className="review-quote mt-6 text-[#fff0dc]">
               “{featuredReview.content}”
             </blockquote>
             <ReviewAuthor review={featuredReview} />
@@ -93,7 +93,7 @@ export default function Reviews() {
             {otherReviews.map((review) => (
               <article data-reveal-item key={review.user.name} className="review-list-item">
                 <Stars rating={review.stars} />
-                <blockquote className="font-editorial text-xl leading-relaxed text-[#F3EEE8]">
+                <blockquote className="font-editorial text-xl leading-relaxed text-[#fff0dc]">
                   “{review.content}”
                 </blockquote>
                 <ReviewAuthor review={review} />
@@ -102,11 +102,11 @@ export default function Reviews() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-[#F3EEE8]/25 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-base leading-7 text-[#F3EEE8]/85">
+        <div className="mt-10 flex flex-col gap-4 border-t border-[#fff0dc]/25 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-base leading-7 text-[#fff0dc]/85">
             Have a date in mind? Send it to us and we’ll check availability.
           </p>
-          <Link href="/booking" className="button-coral px-7 py-3.5" aria-label="Ask about a Poovar boat ride">
+          <Link href="/booking" className="button-primary px-7 py-3.5" aria-label="Ask about a Poovar boat ride">
             Check dates
           </Link>
         </div>
@@ -118,9 +118,9 @@ export default function Reviews() {
 function ReviewAuthor({ review }: { review: Review }) {
   return (
     <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
-      <span className="font-semibold text-[#F3EEE8]">{review.user.name}</span>
-      {review.date && <span className="text-[#F3EEE8]/75">{review.date}</span>}
-      {review.service && <span className="text-[#F3EEE8]/85">{review.service}</span>}
+      <span className="font-semibold text-[#fff0dc]">{review.user.name}</span>
+      {review.date && <span className="text-[#fff0dc]/75">{review.date}</span>}
+      {review.service && <span className="text-[#fff0dc]/85">{review.service}</span>}
     </div>
   );
 }

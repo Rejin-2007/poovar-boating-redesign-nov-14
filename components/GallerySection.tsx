@@ -24,23 +24,23 @@ export default function GallerySection({ homePreview = false }: { homePreview?: 
   const photos = homePreview ? homePreviewImages : galleryImages;
 
   return (
-    <section aria-labelledby="poovar-gallery-heading" className="theme-teal w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <section aria-labelledby="poovar-gallery-heading" className="theme-burgundy-deep w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
       <ScrollReveal variant="fade-left" className="mb-9 sm:mb-12" textReveal>
       <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div>
           <p className="eyebrow mb-3">Visual story</p>
-          <h2 id="poovar-gallery-heading" className="max-w-xl text-3xl font-semibold leading-tight text-[#F3EEE8] sm:text-4xl lg:text-5xl">
+          <h2 id="poovar-gallery-heading" className="max-w-xl text-3xl font-semibold leading-tight text-[#fff0dc] sm:text-4xl lg:text-5xl">
             {homePreview ? "A few scenes from the water." : "Photos from Poovar’s backwater routes."}
           </h2>
         </div>
-        <p className="max-w-2xl text-base leading-8 text-[#F3EEE8]/85 lg:justify-self-end sm:text-lg">
+        <p className="max-w-2xl text-base leading-8 text-[#fff0dc]/85 lg:justify-self-end sm:text-lg">
           {homePreview
             ? "Passengers, boats, and the banks along the Poovar route."
             : "Boats in the mangrove channels, out by the estuary, and along the shoreline."}
         </p>
         {homePreview && (
-          <Link href="/gallery" className="text-sm font-semibold text-[#F3EEE8] underline decoration-[#FF6845] decoration-2 underline-offset-4 lg:justify-self-end">
+          <Link href="/gallery" className="text-sm font-semibold text-[#fff0dc] underline decoration-[#fff0dc] decoration-2 underline-offset-4 lg:justify-self-end">
             See the full gallery
           </Link>
         )}

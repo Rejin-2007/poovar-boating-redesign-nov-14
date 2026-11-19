@@ -1,27 +1,27 @@
 export default function PrivacyPolicySection() {
   return (
-    <section className="bg-[#F3EEE8] py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#790b13] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <header className="mb-12 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#17645F] mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#fff0dc] mb-4">
             Privacy Policy for Poovar Boating Services
           </h1>
-          <p className="text-base sm:text-lg text-[#17645F]">
+          <p className="text-base sm:text-lg text-[#fff0dc]">
             Protecting your privacy and securing your personal information is our top priority
           </p>
         </header>
 
-        <div className="bg-[#F3EEE8] rounded-xl p-6 mb-10">
+        <div className="bg-[#65090f] rounded-xl p-6 mb-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm sm:text-base">
             <div>
-              <h3 className="font-semibold text-[#17645F] mb-2">Effective Date</h3>
-              <p className="text-[#17645F] font-medium">27 January 2025</p>
+              <h3 className="font-semibold text-[#fff0dc] mb-2">Effective Date</h3>
+              <p className="text-[#fff0dc] font-medium">27 January 2025</p>
             </div>
             <div>
-              <h3 className="font-semibold text-[#17645F] mb-2">Contact Email</h3>
+              <h3 className="font-semibold text-[#fff0dc] mb-2">Contact Email</h3>
               <a
                 href="mailto:support@poovarboating.in"
-                className="text-[#17645F] hover:text-[#17645F] font-medium underline-offset-4 hover:underline"
+                className="text-[#fff0dc] hover:text-[#fff0dc] font-medium underline-offset-4 hover:underline"
                 aria-label="Email support at support@poovarboating.in"
               >
                 support@poovarboating.in
@@ -30,7 +30,7 @@ export default function PrivacyPolicySection() {
           </div>
         </div>
 
-        <div className="space-y-12 text-[#17645F]">
+        <div className="space-y-12 text-[#fff0dc]">
           <p className="text-base sm:text-lg leading-relaxed">
             At <strong>Poovar Boating</strong>, we are committed to protecting your privacy and ensuring
             the security of your personal information. This Privacy Policy explains how we collect,
@@ -38,13 +38,13 @@ export default function PrivacyPolicySection() {
             in Kerala&apos;s backwaters.
           </p>
 
-          <section className="border-b border-[#F3EEE8] pb-10 space-y-6">
-            <h2 className="text-2xl font-bold text-[#17645F]">
+          <section className="border-b border-[#fff0dc] pb-10 space-y-6">
+            <h2 className="text-2xl font-bold text-[#fff0dc]">
               1. Information We Collect
             </h2>
 
             <div>
-              <h3 className="text-lg font-semibold text-[#17645F] mb-2">
+              <h3 className="text-lg font-semibold text-[#fff0dc] mb-2">
                 Personal Information
               </h3>
               <p>
@@ -55,7 +55,7 @@ export default function PrivacyPolicySection() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-[#17645F] mb-2">
+              <h3 className="text-lg font-semibold text-[#fff0dc] mb-2">
                 Payment Information
               </h3>
               <p>
@@ -66,7 +66,7 @@ export default function PrivacyPolicySection() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-[#17645F] mb-2">
+              <h3 className="text-lg font-semibold text-[#fff0dc] mb-2">
                 Usage Information
               </h3>
               <p>
@@ -76,33 +76,33 @@ export default function PrivacyPolicySection() {
             </div>
           </section>
 
-          <section className="border-b border-[#F3EEE8] pb-10 space-y-6">
-            <h2 className="text-2xl font-bold text-[#17645F]">
+          <section className="border-b border-[#fff0dc] pb-10 space-y-6">
+            <h2 className="text-2xl font-bold text-[#fff0dc]">
               2. Use of Information
             </h2>
 
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <span className="text-[#17645F] font-bold">✓</span>
+                <span className="text-[#fff0dc] font-bold">✓</span>
                 <span>To manage and confirm bookings and reservations</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#17645F] font-bold">✓</span>
+                <span className="text-[#fff0dc] font-bold">✓</span>
                 <span>To provide customer support and respond to inquiries</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#17645F] font-bold">✓</span>
+                <span className="text-[#fff0dc] font-bold">✓</span>
                 <span>To improve website performance and service offerings</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#17645F] font-bold">✓</span>
+                <span className="text-[#fff0dc] font-bold">✓</span>
                 <span>To send booking updates and important service notifications</span>
               </li>
             </ul>
           </section>
 
-          <section className="border-b border-[#F3EEE8] pb-10 space-y-6">
-            <h2 className="text-2xl font-bold text-[#17645F]">
+          <section className="border-b border-[#fff0dc] pb-10 space-y-6">
+            <h2 className="text-2xl font-bold text-[#fff0dc]">
               3. Sharing of Information
             </h2>
 
@@ -111,8 +111,8 @@ export default function PrivacyPolicySection() {
             </p>
 
             <div className="space-y-4">
-              <div className="bg-[#F3EEE8] p-4 rounded-lg">
-                <h3 className="font-semibold text-[#17645F] mb-2">
+              <div className="bg-[#65090f] p-4 rounded-lg">
+                <h3 className="font-semibold text-[#fff0dc] mb-2">
                   Service Providers
                 </h3>
                 <p>
@@ -121,8 +121,8 @@ export default function PrivacyPolicySection() {
                 </p>
               </div>
 
-              <div className="bg-[#F3EEE8] p-4 rounded-lg">
-                <h3 className="font-semibold text-[#17645F] mb-2">
+              <div className="bg-[#65090f] p-4 rounded-lg">
+                <h3 className="font-semibold text-[#fff0dc] mb-2">
                   Legal Requirements
                 </h3>
                 <p>
@@ -133,8 +133,8 @@ export default function PrivacyPolicySection() {
             </div>
           </section>
 
-          <section className="border-b border-[#F3EEE8] pb-10 space-y-6">
-            <h2 className="text-2xl font-bold text-[#17645F]">
+          <section className="border-b border-[#fff0dc] pb-10 space-y-6">
+            <h2 className="text-2xl font-bold text-[#fff0dc]">
               4. Security of Information
             </h2>
 
@@ -144,8 +144,8 @@ export default function PrivacyPolicySection() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-[#F3EEE8] p-4 rounded-lg">
-                <h3 className="font-semibold text-[#17645F] mb-2">
+              <div className="bg-[#65090f] p-4 rounded-lg">
+                <h3 className="font-semibold text-[#fff0dc] mb-2">
                   SSL Encryption
                 </h3>
                 <p className="text-sm">
@@ -153,8 +153,8 @@ export default function PrivacyPolicySection() {
                 </p>
               </div>
 
-              <div className="bg-[#F3EEE8] p-4 rounded-lg">
-                <h3 className="font-semibold text-[#17645F] mb-2">
+              <div className="bg-[#65090f] p-4 rounded-lg">
+                <h3 className="font-semibold text-[#fff0dc] mb-2">
                   Secure Servers
                 </h3>
                 <p className="text-sm">
@@ -164,8 +164,8 @@ export default function PrivacyPolicySection() {
             </div>
           </section>
 
-          <section className="border-b border-[#F3EEE8] pb-10 space-y-6">
-            <h2 className="text-2xl font-bold text-[#17645F]">
+          <section className="border-b border-[#fff0dc] pb-10 space-y-6">
+            <h2 className="text-2xl font-bold text-[#fff0dc]">
               5. Your Rights
             </h2>
 
@@ -174,7 +174,7 @@ export default function PrivacyPolicySection() {
               subject to applicable legal requirements.
             </p>
 
-            <div className="bg-[#F3EEE8] p-6 rounded-lg">
+            <div className="bg-[#65090f] p-6 rounded-lg">
               <ul className="space-y-2">
                 <li>• Request access to your stored personal data</li>
                 <li>• Correct inaccurate information</li>
@@ -185,7 +185,7 @@ export default function PrivacyPolicySection() {
           </section>
 
           <section className="space-y-6">
-            <h2 className="text-2xl font-bold text-[#17645F]">
+            <h2 className="text-2xl font-bold text-[#fff0dc]">
               6. Updates to This Policy
             </h2>
 
@@ -195,8 +195,8 @@ export default function PrivacyPolicySection() {
             </p>
           </section>
 
-          <div className="mt-12 bg-[#F3EEE8] rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-[#17645F] mb-4">
+          <div className="mt-12 bg-[#65090f] rounded-xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-[#fff0dc] mb-4">
               Contact Us for Privacy Concerns
             </h2>
             <p className="mb-6">
@@ -204,12 +204,12 @@ export default function PrivacyPolicySection() {
             </p>
             <a
               href="mailto:support@poovarboating.in"
-              className="inline-block bg-[#17645F] text-[#F3EEE8] px-6 py-3 rounded-lg hover:bg-[#17645F] transition-colors duration-200 font-semibold"
+              className="inline-block rounded-lg bg-[#fff0dc] px-6 py-3 font-semibold text-[#790b13] transition-colors duration-200 hover:brightness-95"
               aria-label="Email privacy support at support@poovarboating.in"
             >
               support@poovarboating.in
             </a>
-            <p className="text-sm text-[#17645F] mt-4">
+            <p className="text-sm text-[#fff0dc] mt-4">
               Response Time: 24–48 hours
             </p>
           </div>

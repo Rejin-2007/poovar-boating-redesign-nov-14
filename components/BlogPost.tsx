@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function BlogPost() {
   return (
-    <main className="bg-[#F3EEE8] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-      <article className="blog-article mx-auto max-w-4xl rounded-[2rem] border border-[#17645F]/10 bg-[#F3EEE8] px-6 py-8 shadow-[0_18px_50px_rgba(23,100,95,0.06)] sm:px-10 sm:py-12 lg:px-14">
+    <main className="bg-[#790b13] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <article className="blog-article mx-auto max-w-4xl rounded-[2rem] border border-[#fff0dc]/10 bg-[#790b13] px-6 py-8 shadow-[0_18px_50px_rgba(121,11,19,0.06)] sm:px-10 sm:py-12 lg:px-14">
         <header>
           <p className="eyebrow mb-4">A local guide</p>
           <h1>A day on the water in Poovar</h1>
-          <p className="mt-4 text-sm text-[#17645F]">Poovar, Kerala · By Kayaloram</p>
+          <p className="mt-4 text-sm text-[#fff0dc]">Poovar, Kerala · By Kayaloram</p>
         </header>
 
         <section>
@@ -44,9 +44,9 @@ export default function BlogPost() {
           </p>
         </section>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-[#17645F]/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-base leading-7 text-[#17645F]">Have a date in mind? Ask us about the available cruises.</p>
-          <Link href="/booking" className="button-coral px-7 py-3.5">Ask about a boat ride</Link>
+        <div className="mt-10 flex flex-col gap-4 border-t border-[#fff0dc]/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-base leading-7 text-[#fff0dc]">Have a date in mind? Ask us about the available cruises.</p>
+          <Link href="/booking" className="button-primary px-7 py-3.5">Ask about a boat ride</Link>
         </div>
       </article>
     </main>
