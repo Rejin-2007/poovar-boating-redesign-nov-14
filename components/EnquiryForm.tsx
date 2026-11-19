@@ -207,8 +207,8 @@ This Message From Poovar Boating Website`,
   };
 
   const inputClass =
-    "enquiry-form-field mt-2 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[#fff0dc]/50";
-  const errorClass = "border-[#fff0dc] focus:ring-[#fff0dc]/60";
+    "mt-2 w-full rounded-xl border border-[#17645F]/25 bg-[#F3EEE8] px-4 py-3 text-[#17645F] transition placeholder:text-[#17645F]/50 focus:outline-none focus:ring-2 focus:ring-[#17645F]/40";
+  const errorClass = "border-red-700 focus:ring-red-700/30";
 
   return (
     <section ref={root} aria-labelledby="enquiry-heading" className="px-4 py-10">
@@ -216,24 +216,24 @@ This Message From Poovar Boating Website`,
         onSubmit={handleSubmit}
         noValidate
         aria-busy={loading}
-        className="mx-auto w-full max-w-lg rounded-3xl border border-[#fff0dc]/20 bg-[#65090f] p-6 shadow-[0_24px_70px_rgba(48,3,7,0.28)] sm:p-8"
+        className="mx-auto w-full max-w-lg rounded-3xl border border-[#17645F]/15 bg-[#F3EEE8] p-6 shadow-xl sm:p-8"
       >
         <Heading
           id="enquiry-heading"
           data-form-heading
-          className="mb-2 text-center text-2xl font-semibold text-[#fff0dc] sm:text-3xl"
+          className="mb-2 text-center text-2xl font-semibold text-[#17645F] sm:text-3xl"
         >
           Plan a Poovar boat ride
         </Heading>
 
-        <p data-form-copy className="mb-5 text-center text-sm leading-6 text-[#fff0dc]">
+        <p data-form-copy className="mb-5 text-center text-sm leading-6 text-[#17645F]">
           Tell us a little about your trip and we’ll get back to you to confirm the details.
         </p>
-        <p data-form-copy className="mb-7 text-center text-xs text-[#fff0dc]/75">
+        <p data-form-copy className="mb-7 text-center text-xs text-[#17645F]/75">
           <span className="font-semibold">*</span> Required. Date, cruise, and trip details are optional.
         </p>
 
-        <label data-form-field htmlFor="enquiry-name" className="mb-5 block text-sm text-[#fff0dc]">
+        <label data-form-field htmlFor="enquiry-name" className="mb-5 block text-sm text-[#17645F]">
           <span className="flex items-center gap-2 font-medium">
             <FaUser aria-hidden="true" /> Full Name <span aria-hidden="true">*</span>
           </span>
@@ -253,11 +253,11 @@ This Message From Poovar Boating Website`,
             aria-invalid={Boolean(visibleError("name"))}
             aria-describedby={visibleError("name") ? "enquiry-name-error" : "enquiry-name-help"}
           />
-          <span id="enquiry-name-help" className="mt-1 block text-xs text-[#fff0dc]/70">Use at least two characters.</span>
-          {visibleError("name") && <span id="enquiry-name-error" className="mt-1 block text-xs font-medium text-[#fff0dc]">{visibleError("name")}</span>}
+          <span id="enquiry-name-help" className="mt-1 block text-xs text-[#17645F]/70">Use at least two characters.</span>
+          {visibleError("name") && <span id="enquiry-name-error" className="mt-1 block text-xs font-medium text-red-700">{visibleError("name")}</span>}
         </label>
 
-        <label data-form-field htmlFor="enquiry-phone" className="mb-5 block text-sm text-[#fff0dc]">
+        <label data-form-field htmlFor="enquiry-phone" className="mb-5 block text-sm text-[#17645F]">
           <span className="flex items-center gap-2 font-medium">
             <FaPhoneAlt aria-hidden="true" /> Phone Number <span aria-hidden="true">*</span>
           </span>
@@ -277,13 +277,13 @@ This Message From Poovar Boating Website`,
             aria-invalid={Boolean(visibleError("phone"))}
             aria-describedby={visibleError("phone") ? "enquiry-phone-error" : "enquiry-phone-help"}
           />
-          <span id="enquiry-phone-help" className="mt-1 block text-xs text-[#fff0dc]/70">Spaces and a +91 country code are okay.</span>
-          {visibleError("phone") && <span id="enquiry-phone-error" className="mt-1 block text-xs font-medium text-[#fff0dc]">{visibleError("phone")}</span>}
+          <span id="enquiry-phone-help" className="mt-1 block text-xs text-[#17645F]/70">Spaces and a +91 country code are okay.</span>
+          {visibleError("phone") && <span id="enquiry-phone-error" className="mt-1 block text-xs font-medium text-red-700">{visibleError("phone")}</span>}
         </label>
 
-        <label data-form-field htmlFor="enquiry-date" className="mb-5 block text-sm text-[#fff0dc]">
+        <label data-form-field htmlFor="enquiry-date" className="mb-5 block text-sm text-[#17645F]">
           <span className="flex items-center gap-2 font-medium">
-            <FaCalendarAlt aria-hidden="true" /> Preferred Date <span className="text-xs font-normal text-[#fff0dc]/70">(optional)</span>
+            <FaCalendarAlt aria-hidden="true" /> Preferred Date <span className="text-xs font-normal text-[#17645F]/70">(optional)</span>
           </span>
           <input
             id="enquiry-date"
@@ -297,9 +297,9 @@ This Message From Poovar Boating Website`,
           />
         </label>
 
-        <label data-form-field htmlFor="enquiry-package" className="mb-5 block text-sm text-[#fff0dc]">
+        <label data-form-field htmlFor="enquiry-package" className="mb-5 block text-sm text-[#17645F]">
           <span className="flex items-center gap-2 font-medium">
-            <FaShip aria-hidden="true" /> Select Package <span className="text-xs font-normal text-[#fff0dc]/70">(optional)</span>
+            <FaShip aria-hidden="true" /> Select Package <span className="text-xs font-normal text-[#17645F]/70">(optional)</span>
           </span>
           <select
             id="enquiry-package"
@@ -314,9 +314,9 @@ This Message From Poovar Boating Website`,
           </select>
         </label>
 
-        <label data-form-field htmlFor="enquiry-message" className="mb-7 block text-sm text-[#fff0dc]">
+        <label data-form-field htmlFor="enquiry-message" className="mb-7 block text-sm text-[#17645F]">
           <span className="flex items-center gap-2 font-medium">
-            <FaCommentDots aria-hidden="true" /> Enquiry Details <span className="text-xs font-normal text-[#fff0dc]/70">(optional)</span>
+            <FaCommentDots aria-hidden="true" /> Enquiry Details <span className="text-xs font-normal text-[#17645F]/70">(optional)</span>
           </span>
           <textarea
             id="enquiry-message"
@@ -334,16 +334,16 @@ This Message From Poovar Boating Website`,
           <button
             disabled={loading}
             type="submit"
-            className="button-primary w-full gap-2 disabled:cursor-wait disabled:opacity-70"
+            className="button-coral w-full gap-2 disabled:cursor-wait disabled:opacity-70"
           >
-            {loading && <span aria-hidden="true" className="h-4 w-4 animate-spin rounded-full border-2 border-[#fff0dc]/30 border-t-[#790b13]" />}
+            {loading && <span aria-hidden="true" className="h-4 w-4 animate-spin rounded-full border-2 border-[#123430]/30 border-t-[#123430]" />}
             {loading ? "Sending your enquiry…" : "Send my enquiry"}
           </button>
 
-          <p aria-live="polite" className="mt-3 min-h-5 text-center text-xs text-[#fff0dc]/75">
+          <p aria-live="polite" className="mt-3 min-h-5 text-center text-xs text-[#17645F]/75">
             {loading ? "Please keep this page open while we send your message." : "The team will follow up about your date and cruise."}
           </p>
-          {submitError && <p role="alert" className="mt-3 rounded-xl border border-[#fff0dc]/30 bg-[#790b13] px-4 py-3 text-sm leading-6 text-[#fff0dc]">{submitError}</p>}
+          {submitError && <p role="alert" className="mt-3 rounded-xl bg-red-50 px-4 py-3 text-sm leading-6 text-red-800">{submitError}</p>}
         </div>
       </form>
     </section>

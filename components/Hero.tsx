@@ -54,25 +54,25 @@ export default function Hero() {
   }, { scope: root });
 
   return (
-    <section ref={root} className="overflow-hidden bg-[#790b13] px-4 py-9 text-[#fff0dc] sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+    <section ref={root} className="overflow-hidden bg-[#F3EEE8] px-4 py-9 text-[#17645F] sm:px-6 sm:py-12 lg:px-8 lg:py-14">
       <div className="mx-auto grid max-w-7xl items-center gap-9 lg:min-h-[min(82vh,780px)] lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
         <div className="hero-copy relative z-10 max-w-2xl py-4 sm:py-8 lg:py-0">
           <p data-hero-eyebrow className="eyebrow mb-5 flex items-center gap-3">
-            <span className="h-px w-9 bg-[#fff0dc]" />
+            <span className="h-px w-9 bg-[#FF6845]" />
             Poovar · Kerala
           </p>
 
-          <h1 className="max-w-[40rem] text-[3.2rem] font-semibold leading-[1.02] tracking-[-0.055em] text-[#fff0dc] sm:text-6xl lg:text-[4.5rem]">
+          <h1 className="max-w-[40rem] text-[3.2rem] font-semibold leading-[1.02] tracking-[-0.055em] text-[#17645F] sm:text-6xl lg:text-[4.5rem]">
             <span data-hero-line className="block">Poovar Boating</span>
-            <span data-hero-line className="font-editorial block text-[#fff0dc]">in a quieter rhythm.</span>
+            <span data-hero-line className="font-editorial block text-[#17645F]">in a quieter rhythm.</span>
           </h1>
 
-          <p data-hero-support className="mt-6 max-w-lg text-base leading-8 text-[#fff0dc] sm:text-lg">
+          <p data-hero-support className="mt-6 max-w-lg text-base leading-8 text-[#17645F] sm:text-lg">
             Follow Poovar’s backwater channels beneath the mangroves and out toward the estuary. Choose a cruise, then tell us when you’re coming.
           </p>
 
           <div data-hero-support className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link href="/booking" className="button-primary px-7 py-3.5">
+            <Link href="/booking" className="button-coral px-7 py-3.5">
               Book Your Boat Ride
             </Link>
             <Link href="/services" className="button-outline px-7 py-3.5">
@@ -85,12 +85,12 @@ export default function Hero() {
             href="https://wa.me/918139031924?text=Hello%2C%20I%20am%20interested%20in%20booking%20a%20Poovar%20boating%20experience.%20Could%20you%20please%20share%20the%20available%20packages%20and%20booking%20details%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#fff0dc] underline decoration-[#fff0dc] underline-offset-4"
+            className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#17645F] underline decoration-[#FF6845] underline-offset-4"
           >
             Ask about packages on WhatsApp ↗
           </a>
 
-          <p data-hero-support className="mt-8 border-t border-[#fff0dc]/15 pt-4 text-sm font-medium text-[#fff0dc]">
+          <p data-hero-support className="mt-8 border-t border-[#17645F]/15 pt-4 text-sm font-medium text-[#17645F]">
             Mangrove channels · estuary · Golden Sand Beach
           </p>
         </div>

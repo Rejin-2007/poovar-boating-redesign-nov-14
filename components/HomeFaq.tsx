@@ -19,7 +19,7 @@ const FAQ_SCHEMA = {
 
 export default function HomeFaq() {
   return (
-    <section aria-labelledby="poovar-faq-title" className="theme-burgundy px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section aria-labelledby="poovar-faq-title" className="theme-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -29,10 +29,10 @@ export default function HomeFaq() {
       <div className="mx-auto max-w-7xl">
         <header className="mb-9 max-w-3xl sm:mb-12">
           <p className="eyebrow mb-3">Before you set out</p>
-          <h2 id="poovar-faq-title" className="text-3xl font-semibold leading-tight text-[#fff0dc] sm:text-4xl lg:text-5xl">
+          <h2 id="poovar-faq-title" className="text-3xl font-semibold leading-tight text-[#17645F] sm:text-4xl lg:text-5xl">
             Poovar boating questions, answered plainly.
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-[#fff0dc]/80 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-8 text-[#17645F]/80 sm:text-lg">
             Trip times, fares and route stops can depend on the date and cruise. We’ve noted what is available here and where to check directly.
           </p>
         </header>
@@ -43,12 +43,12 @@ export default function HomeFaq() {
           ))}
         </div>
 
-        <p className="mt-8 text-sm leading-7 text-[#fff0dc]/85">
-          Need a current answer for your date? <Link className="font-semibold text-[#fff0dc] underline decoration-[#fff0dc] decoration-2 underline-offset-4" href="/contact">Contact the Poovar boating team</Link> or compare the <Link className="font-semibold text-[#fff0dc] underline decoration-[#fff0dc] decoration-2 underline-offset-4" href="/pricing">cruise pricing details</Link>.
+        <p className="mt-8 text-sm leading-7 text-[#17645F]/85">
+          Need a current answer for your date? <Link className="font-semibold text-[#17645F] underline decoration-[#FF6845] decoration-2 underline-offset-4" href="/contact">Contact the Poovar boating team</Link> or compare the <Link className="font-semibold text-[#17645F] underline decoration-[#FF6845] decoration-2 underline-offset-4" href="/pricing">cruise pricing details</Link>.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-[#fff0dc]/20 pt-6">
-          <Link href="/booking" className="button-primary px-6 py-3">Ask about your date</Link>
+        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-[#17645F]/20 pt-6">
+          <Link href="/booking" className="button-coral px-6 py-3">Ask about your date</Link>
           <a
             href="https://wa.me/918139031924?text=Hello%2C%20I%20am%20interested%20in%20booking%20a%20Poovar%20boating%20experience.%20Could%20you%20please%20share%20the%20available%20packages%20and%20booking%20details%3F"
             target="_blank"
@@ -57,7 +57,7 @@ export default function HomeFaq() {
           >
             Message on WhatsApp
           </a>
-          <a href="tel:+918139031924" className="min-h-11 inline-flex items-center text-sm font-semibold text-[#fff0dc] underline decoration-[#fff0dc] underline-offset-4">
+          <a href="tel:+918139031924" className="min-h-11 inline-flex items-center text-sm font-semibold text-[#17645F] underline decoration-[#FF6845] underline-offset-4">
             Call +91 81390 31924
           </a>
         </div>
@@ -105,7 +105,7 @@ function AnimatedFaq({ question, answer }: { question: string; answer: string })
   }, { scope: root, dependencies: [open], revertOnUpdate: true });
 
   return (
-    <details ref={root} open={panelMounted} className="group border-t border-[#fff0dc]/20 py-5">
+    <details ref={root} open={panelMounted} className="group border-t border-[#17645F]/20 py-5">
       <summary
         aria-controls={panelId}
         aria-expanded={open}
@@ -115,16 +115,16 @@ function AnimatedFaq({ question, answer }: { question: string; answer: string })
           if (nextOpen) setPanelMounted(true);
           setOpen(nextOpen);
         }}
-        className="flex cursor-pointer list-none items-start justify-between gap-5 text-lg font-semibold text-[#fff0dc] marker:hidden"
+        className="flex cursor-pointer list-none items-start justify-between gap-5 text-lg font-semibold text-[#17645F] marker:hidden"
       >
         {question}
-        <span aria-hidden="true" className={`text-[#fff0dc] transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+        <span aria-hidden="true" className={`text-[#FF6845] transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
       </summary>
       <p
         ref={panel}
         id={panelId}
         aria-hidden={!open}
-        className={`mt-3 max-w-prose pr-8 text-sm leading-7 text-[#fff0dc]/85 sm:text-base ${panelMounted ? "" : "hidden"}`}
+        className={`mt-3 max-w-prose pr-8 text-sm leading-7 text-[#17645F]/85 sm:text-base ${panelMounted ? "" : "hidden"}`}
       >
         {answer}
       </p>

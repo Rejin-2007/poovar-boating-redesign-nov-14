@@ -12,27 +12,27 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#790b13] px-6">
+    <main className="flex min-h-screen items-center justify-center bg-[#F3EEE8] px-6">
       <ScrollReveal className="max-w-xl">
       <section
         className="text-center max-w-xl"
         aria-labelledby="not-found-heading"
       >
         {/* 404 Number */}
-        <h1 className="text-8xl font-extrabold text-[#fff0dc] drop-shadow-lg">
+        <h1 className="text-8xl font-extrabold text-[#17645F] drop-shadow-lg">
           404
         </h1>
 
         {/* Main Heading */}
         <h2
           id="not-found-heading"
-          className="mt-6 text-3xl font-bold text-[#fff0dc]"
+          className="mt-6 text-3xl font-bold text-[#17645F]"
         >
           Oops! Page Not Found
         </h2>
 
         {/* Description */}
-        <p className="mt-4 text-[#fff0dc] leading-relaxed">
+        <p className="mt-4 text-[#17645F] leading-relaxed">
           The page you are looking for might have been removed,
           renamed, or is temporarily unavailable.
           Please check the URL or return to the homepage.
@@ -43,7 +43,7 @@ export default function NotFound() {
           <Link
             href="/"
             prefetch={false}
-            className="rounded-xl bg-[#fff0dc] px-6 py-3 font-semibold text-[#790b13] shadow-md transition duration-300 hover:brightness-95"
+            className="px-6 py-3 bg-[#17645F] hover:bg-[#17645F] text-[#F3EEE8] font-medium rounded-xl shadow-md transition duration-300"
           >
             Go to Homepage
           </Link>
@@ -51,14 +51,14 @@ export default function NotFound() {
           <Link
             href="/contact"
             prefetch={false}
-            className="rounded-xl border border-[#fff0dc]/50 px-6 py-3 font-semibold text-[#fff0dc] shadow-sm transition duration-300 hover:bg-[#fff0dc]/10"
+            className="px-6 py-3 bg-[#F3EEE8] border border-[#17645F]/25 hover:bg-[#17645F]/5 text-[#17645F] font-medium rounded-xl shadow-sm transition duration-300"
           >
             Contact Support
           </Link>
         </div>
 
         {/* UX Tip */}
-        <p className="mt-8 text-sm text-[#fff0dc]">
+        <p className="mt-8 text-sm text-[#17645F]">
           Need help? Try searching from the homepage.
         </p>
       </section>

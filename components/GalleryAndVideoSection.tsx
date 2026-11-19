@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function GalleryAndVideoSection() {
   return (
-    <div className="bg-[#790b13]">
+    <div className="bg-[#F3EEE8]">
       <GallerySection />
       <ScrollReveal variant="fade-right"><BoatingVideos /></ScrollReveal>
     </div>

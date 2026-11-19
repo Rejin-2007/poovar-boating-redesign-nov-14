@@ -15,10 +15,10 @@ export default function ContactSection() {
         className="object-cover object-center"
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#790b13]/65" />
+      <div className="absolute inset-0 bg-[#17645F]/65" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-0 text-[#fff0dc]">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-0 text-[#F3EEE8]">
         <div className="space-y-6 max-w-3xl">
           
           {/* Main Heading */}
@@ -30,7 +30,7 @@ export default function ContactSection() {
           </h1>
 
           {/* Description */}
-          <div className="space-y-4 text-base sm:text-lg leading-relaxed text-[#fff0dc]">
+          <div className="space-y-4 text-base sm:text-lg leading-relaxed text-[#F3EEE8]">
             <p>
               Call or message Kayaloram to ask about departure times, cruise options, and routes.
             </p>

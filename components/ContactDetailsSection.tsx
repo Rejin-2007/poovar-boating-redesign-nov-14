@@ -50,13 +50,13 @@ export default function ContactDetailsSection() {
       const cleanups = links.map((link) => {
         const onEnter = () => gsap.to(link, {
           y: -2,
-          color: "#fff0dc",
+          color: "#FF6845",
           duration: 0.2,
           ease: "power2.out",
         });
         const onLeave = () => gsap.to(link, {
           y: 0,
-          color: "#fff0dc",
+          color: "#17645F",
           duration: 0.24,
           ease: "power2.out",
         });
@@ -84,7 +84,7 @@ export default function ContactDetailsSection() {
     <section
       ref={root}
       aria-labelledby="contact-details-heading"
-      className="theme-burgundy mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+      className="theme-ivory mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
@@ -96,15 +96,15 @@ export default function ContactDetailsSection() {
             <h2
               id="contact-details-heading"
               data-contact-intro
-              className="text-2xl sm:text-3xl  font-semibold text-[#fff0dc] mb-4"
+              className="text-2xl sm:text-3xl  font-semibold text-[#17645F] mb-4"
             >
               Contact Kayaloram Poovar Boating & Backwater Cruise
             </h2>
 
-            <p data-contact-intro className="text-[#fff0dc] leading-relaxed max-w-xl">
+            <p data-contact-intro className="text-[#17645F] leading-relaxed max-w-xl">
               Kayaloram Backwater Cruise is on Club Mahindra Resort Road in Viraly, Poovar. Call us about boat timings, cruise options, or availability.
             </p>
-            <span data-contact-rule aria-hidden="true" className="mt-5 block h-0.5 w-16 origin-left bg-[#fff0dc]" />
+            <span data-contact-rule aria-hidden="true" className="mt-5 block h-0.5 w-16 origin-left bg-[#FF6845]" />
           </header>
 
           {/* Address */}
@@ -113,7 +113,7 @@ export default function ContactDetailsSection() {
               ADDRESS
             </p>
 
-            <address className="not-italic text-base leading-relaxed text-[#fff0dc] sm:text-lg">
+            <address className="not-italic text-base leading-relaxed text-[#17645F] sm:text-lg">
               Kayaloram Backwater Cruise <br />
               Club Mahindra Resort Road <br />
               Viraly, Poovar <br />
@@ -125,7 +125,7 @@ export default function ContactDetailsSection() {
               target="_blank"
               rel="noopener noreferrer"
               data-contact-link
-              className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#fff0dc] underline decoration-[#fff0dc] underline-offset-4"
+              className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#17645F] underline decoration-[#FF6845] underline-offset-4"
             >
               Search this address in Google Maps
             </a>
@@ -133,25 +133,25 @@ export default function ContactDetailsSection() {
 
           {/* Reception Manager */}
           <div data-contact-item>
-            <p className="text-sm font-semibold tracking-wide text-[#fff0dc] mb-2">
+            <p className="text-sm font-semibold tracking-wide text-[#17645F] mb-2">
               RECEPTION MANAGER
             </p>
 
-            <p className="text-base sm:text-lg font-medium text-[#fff0dc]">
+            <p className="text-base sm:text-lg font-medium text-[#17645F]">
               Rajesh M – Poovar Boating Service
             </p>
           </div>
 
           {/* Primary Phone */}
           <div data-contact-item>
-            <p className="text-sm font-semibold tracking-wide text-[#fff0dc] mb-2">
+            <p className="text-sm font-semibold tracking-wide text-[#17645F] mb-2">
               PHONE
             </p>
 
             <a
               href="tel:+918139031924"
               data-contact-link
-              className="text-base sm:text-lg font-medium text-[#fff0dc] hover:underline"
+              className="text-base sm:text-lg font-medium text-[#17645F] hover:underline"
             >
               +91 81390 31924
             </a>
@@ -159,14 +159,14 @@ export default function ContactDetailsSection() {
 
           {/* Secondary Phone */}
           <div data-contact-item>
-            <p className="text-sm font-semibold tracking-wide text-[#fff0dc] mb-2">
+            <p className="text-sm font-semibold tracking-wide text-[#17645F] mb-2">
               SECOND PHONE
             </p>
 
             <a
               href="tel:+918075413797"
               data-contact-link
-              className="text-base sm:text-lg font-medium text-[#fff0dc] hover:underline"
+              className="text-base sm:text-lg font-medium text-[#17645F] hover:underline"
             >
               +91 80754 13797
             </a>
@@ -174,14 +174,14 @@ export default function ContactDetailsSection() {
 
           {/* Email */}
           <div data-contact-item>
-            <p className="text-sm font-semibold tracking-wide text-[#fff0dc] mb-2">
+            <p className="text-sm font-semibold tracking-wide text-[#17645F] mb-2">
               EMAIL
             </p>
 
             <a
               href="mailto:rajeshkayaloram@gmail.com"
               data-contact-link
-              className="text-base sm:text-lg font-medium text-[#fff0dc] hover:underline break-all"
+              className="text-base sm:text-lg font-medium text-[#17645F] hover:underline break-all"
             >
               rajeshkayaloram@gmail.com
             </a>
